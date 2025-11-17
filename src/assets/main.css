@@ -1,8 +1,6 @@
 @import './base.css';
 @import "tailwindcss";
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
   font-weight: normal;
   color: #000
 }
@@ -10,3 +8,21 @@
 .p-steppanel{
   padding-top: 40px !important;
 } 
+.p-step-number {
+  background-color: #fff !important;
+  color: black !important;
+  border: none !important;
+  min-width: 20px !important ;
+  height: 20px !important;
+}
+.p-steplist .p-step-active{
+  background-color: #FD04B1;
+}
+.p-steplist .p-step .p-stepper-separator{
+  background-color: white;
+}
+#pv_id_33_steppanel_1{
+  background-color: #FFC0F9 !important;
+  opacity: 100;
+  color: black !important;
+}

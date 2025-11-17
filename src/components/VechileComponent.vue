@@ -1,19 +1,19 @@
 <template>
     <!-- Vechile -->
-    <div v-for="vechile in vechiles" class="text-black !m-4"  @click="handleVehicle(vechile.slug)">
-        <div :class="{'!bg-red-200': selectedVehicle===vechile.slug, 'bg-white p-4 cursor-pointer rounded-lg': true}">
+    <div v-for="vechile in vechiles" class="text-black !mx-12 !mb-2"  @click="handleVehicle(vechile.slug)">
+        <div :class="{'!bg-red-400 !text-white': selectedVehicle===vechile.slug, 'bg-white p-4 cursor-pointer rounded-lg': true}">
             <div class="flex gap-6 justify-between items-center ">
                 <div class="flex gap-8">
                     <img :src="vechile.image" :alt="vechile.name" class="w-[175px]">
                     <div>
-                        <h2 class="text-xl font-bold">{{ vechile.name }}</h2>
+                        <h2 class="text-xl !font-bold">{{ vechile.name }}</h2>
                         <div class="text-sm flex gap-3">
                             <p>{{ vechile.persons}}</p>
                             <p>{{ vechile.luggage }}</p>
                         </div>
                     </div>
                 </div>
-                <h2 class="text-xl font-bold">{{ vechile.price }}</h2>
+                <h2 class="text-xl !font-bold">{{ vechile.price }}</h2>
             </div>
         </div>
     </div>
