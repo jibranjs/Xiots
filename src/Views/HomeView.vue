@@ -6,9 +6,10 @@ import StepPanels from 'primevue/steppanels';
 import StepItem from 'primevue/stepitem';
 import Step from 'primevue/step';
 import StepPanel from 'primevue/steppanel';
-import InputText from 'primevue/inputtext';
 import { ref } from 'vue';
 import JourneyComponent from '@/components/journeyComponent.vue';
+import VechileComponent from '@/components/VechileComponent.vue';
+import InfoComponents from '@/components/infoComponents.vue';
 
 const value = ref()
 </script>
@@ -22,9 +23,25 @@ const value = ref()
                 <Step value="4">Pay</Step>
             </StepList>
             <StepPanels>
+                <StepPanel v-slot="{ activateCallback }" value="1">
+                    <JourneyComponent />
+                    <div class="!mx-12 flex justify-end">
+                        <Button label="Next" @click="activateCallback('2')" severity="info"
+                            class="!text-white !px-6 !mb-3" />
+                    </div>
+                </StepPanel>
+                <StepPanel v-slot="{ activateCallback }" value="2">
+                    <VechileComponent />
+                     <div class="!mx-12 flex justify-end">
+                        <Button label="Next" @click="activateCallback('3')" severity="info"
+                            class="!text-white !px-6 !mb-3" />
+                    </div>
+                </StepPanel>
+                <StepPanel>
+                    <InfoComponents />
+                </StepPanel>
 
-                <JourneyComponent />
-        
+
 
             </StepPanels>
         </Stepper>
