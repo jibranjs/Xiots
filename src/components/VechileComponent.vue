@@ -26,7 +26,6 @@ const selectedVehicle = ref('saloon')
 
 
 const handleVehicle = (slug) => {
-    console.log(`Slug clicked with ${slug}`)
     selectedVehicle.value = slug
 }
 

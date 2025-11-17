@@ -10,6 +10,7 @@ import { ref } from 'vue';
 import JourneyComponent from '@/components/journeyComponent.vue';
 import VechileComponent from '@/components/VechileComponent.vue';
 import InfoComponents from '@/components/infoComponents.vue';
+import PayComponent from '@/components/PayComponent.vue';
 
 const value = ref()
 </script>
@@ -32,13 +33,30 @@ const value = ref()
                 </StepPanel>
                 <StepPanel v-slot="{ activateCallback }" value="2">
                     <VechileComponent />
-                     <div class="!mx-12 flex justify-end">
+                    <div class="!mx-12 flex justify-between">
+                        <Button label="Back" @click="activateCallback('1')" severity="info"
+                            class="!text-white !px-6 !mb-3" />
                         <Button label="Next" @click="activateCallback('3')" severity="info"
                             class="!text-white !px-6 !mb-3" />
                     </div>
                 </StepPanel>
-                <StepPanel>
+                <StepPanel v-slot="{ activateCallback }" value="3">
                     <InfoComponents />
+                    <div class="!mx-12 flex justify-between">
+                        <Button label="Back" @click="activateCallback('2')" severity="info"
+                            class="!text-white !px-6 !mb-3" />
+                        <Button label="Next" @click="activateCallback('4')" severity="info"
+                            class="!text-white !px-6 !mb-3" />
+                    </div>
+                </StepPanel>
+                <StepPanel v-slot="{ activateCallback }" value="4">
+                    <PayComponent />
+                    <div class="!mx-12 flex justify-between">
+                        <Button label="Back" @click="activateCallback('3')" severity="info"
+                            class="!text-white !px-6 !mb-3" />
+                        <Button label="Submit"
+                            class="!text-white !px-6 !mb-3" />
+                    </div>
                 </StepPanel>
 
 
